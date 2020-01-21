@@ -12,4 +12,10 @@ public class MyTest {
         UserService service = new UserServiceImpl();
         service.getUser();
     }
+    @Test
+    public void testIOCUserService(){
+        UserService service = new UserServiceImpl();
+        service.setUserDao(new UserDaoMysqlImpl());
+        service.getUser();
+    }
 }
